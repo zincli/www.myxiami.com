@@ -1,18 +1,17 @@
-<?php
-/**
- * The sidebar containing the secondary widget area, displays on posts and pages.
- *
- * If no active widgets in this sidebar, it will be hidden completely.
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-
-if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-    <div class="sidebar">
-        <div class="inner">
-            <?php dynamic_sidebar( 'sidebar-2' ); ?>
-        </div>
+<div class="sidebar">
+    <div class="inner">
+        <section class="widget">
+            <script type="text/javascript">
+                document.write('<a style="display:none!important" id="tanx-a-mm_29068093_4330051_14566846"></a>');
+                tanx_s = document.createElement("script");
+                tanx_s.type = "text/javascript";
+                tanx_s.charset = "utf-8";
+                tanx_s.id = "tanx-s-mm_29068093_4330051_14566846";
+                tanx_s.async = true;
+                tanx_s.src = "http://p.tanx.com/ex?i=mm_29068093_4330051_14566846";
+                tanx_h = document.getElementsByTagName("head")[0];
+                if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+            </script>
+        </section>
     </div>
-<?php endif; ?>
+</div>

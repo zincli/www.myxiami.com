@@ -30,10 +30,17 @@
     <?php endif; ?>
 
     <?php if ( get_field('is_promotion') ) : ?>
+    <?php
+    $promotion_link;
+    preg_match_all("<{([^}]+),([^}]+)}>", get_field('promotion_link'), $links, PREG_SET_ORDER);
+    $promotion_link = $links[0];
+    ?>
     <div class="show-box">
         <div class="media">
             <div class="media-show">
+                <a href="<?php echo $promotion_link[2] ?>" target="_blank">
                 <img class="media-object" src="<?php the_field('promotion_img') ?>" alt="" width="150px" height="150px"/>
+                </a>
             </div>
             <div class="media-body">
                 <div class="promotion-flag">
@@ -43,12 +50,7 @@
                     <?php the_field('promotion_prices') ?>
                 </div>
                 <div class="actions">
-                    直达链接： <?php
-                    preg_match_all("<{([^}]+),([^}]+)}>", get_field('promotion_link'), $links, PREG_SET_ORDER);
-                    foreach ( $links as $link ){
-                        echo '<a class="btn btn-primary action" href="'.$link[2].'" target="_blank">'.$link[1].'</a>';
-                    }
-                    ?>
+                     <?php echo '<a class="btn btn-primary action" href="'.$promotion_link[2].'" title="'.$promotion_link[1].'" target="_blank">点击购买</a>'; ?>
                 </div>
             </div>
         </div>
